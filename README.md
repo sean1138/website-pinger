@@ -9,13 +9,13 @@ The Inspiration for this was finding a wordpress website that was redirecting me
 
 ## Files Overview
 
-1. **`website-pinger-fetch-source.php` - **
+1. **`website-pinger-fetch-source.php` -**
 	A helper PHP script that fetches the HTML source code of a specified URL (like `https://www.google.com`) to display it on the `website-pinger.php` page. The source code refreshes every 10 seconds using JavaScript in the `website-pinger.php` file.
 
-2. **`website-pinger-status.php` - **
+2. **`website-pinger-status.php` -**
 	A helper PHP script that pings a provided URL and returns its HTTP status code. This file is called by `website-pinger.php` through an AJAX request to check the status of multiple websites.
 
-3. **`website-pinger.php` - **
+3. **`website-pinger.php` -**
 	The main script for pinging a list of websites, this is the one to open in your web browser. It displays a table of URLs and their corresponding HTTP status codes, which are refreshed every 10 seconds without reloading the page. Uses AJAX to periodically call `website-pinger-status.php`.
 
 ## Features
