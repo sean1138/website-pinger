@@ -4,6 +4,9 @@ This project contains three PHP scripts designed to monitor website statuses and
 
 The Inspiration for this was finding a wordpress website that was redirecting me to other websites sometimes but not every time (youtu.be/9VTHPrTLwPU) so it was seemingly random and very hard to reproduce.  `website-pinger.php` automates the process of checking the website so i don't need to refresh the website and/or source code view in my browser manually.
 
+## Screenshot
+![Alt text](screenshot-2024.10.09_080749.jpg?raw=true "screenshot")
+
 ## Files Overview
 
 1. **`website-pinger-fetch-source.php`**  
