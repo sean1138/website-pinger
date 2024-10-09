@@ -10,13 +10,13 @@ The Inspiration for this was finding a wordpress website that was redirecting me
 ## Files Overview
 
 1. **`website-pinger-fetch-source.php`**  
-   A helper PHP script that fetches the HTML source code of a specified URL (like `https://www.google.com`) to display it on the `website-pinger.php` page. The source code refreshes every 10 seconds using JavaScript in the `website-pinger.php` file.
+	A helper PHP script that fetches the HTML source code of a specified URL (like `https://www.google.com`) to display it on the `website-pinger.php` page. The source code refreshes every 10 seconds using JavaScript in the `website-pinger.php` file.
 
-2. **`website-pinger-status.php`**  
-   A helper PHP script that pings a provided URL and returns its HTTP status code. This file is called by `website-pinger.php` through an AJAX request to check the status of multiple websites.
+2. **`website-pinger-status.php`**
+	A helper PHP script that pings a provided URL and returns its HTTP status code. This file is called by `website-pinger.php` through an AJAX request to check the status of multiple websites.
 
-3. **`website-pinger.php`**  
-   The main script for pinging a list of websites, this is the one to open in your web browser. It displays a table of URLs and their corresponding HTTP status codes, which are refreshed every 10 seconds without reloading the page. Uses AJAX to periodically call `website-pinger-status.php`.
+3. **`website-pinger.php`**
+	The main script for pinging a list of websites, this is the one to open in your web browser. It displays a table of URLs and their corresponding HTTP status codes, which are refreshed every 10 seconds without reloading the page. Uses AJAX to periodically call `website-pinger-status.php`.
 
 ## Features
 
@@ -36,39 +36,43 @@ The Inspiration for this was finding a wordpress website that was redirecting me
 ### Installation
 
 1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/website-pinger.git
-   ```
+	```bash
+	git clone https://github.com/yourusername/website-pinger.git
+	```
 
 2. **Move the files to your web server's document root**:
-   For example, if you're using XAMPP, move the files to the `htdocs` folder:
-   ```bash
-   mv website-pinger /path-to-your-server/htdocs/
-   ```
+	For example, if you're using XAMPP, move the files to the `htdocs` folder:
+	```bash
+	mv website-pinger /path-to-your-server/htdocs/
+	```
 
 3. **Ensure PHP is properly configured**: The scripts use `file_get_contents()` and `cURL` to fetch external URLs, so make sure these PHP functions are enabled on your server.
 
 ### Configuration
 
 - In `website-pinger.php`, you can customize the list of URLs to ping by editing the `$urls` array:
-   ```php
-   $urls = [
-       'http://google.com',
-       'http://google.com/xyz1234',
-       'https://www.reddit.com',
-       'https://www.twitter.com',
-       'http://asdkjn349dlk.com',
-   ];
-   ```
+	```php
+	$urls = [
+		 'http://google.com',
+		 'http://google.com/xyz1234',
+		 'https://www.reddit.com',
+		 'https://www.twitter.com',
+		 'http://asdkjn349dlk.com',
+	];
+	```
+- In `website-pinger-fetch-source.php`, you can customize the URL for the `id="sourceCode"` DIV by changing this line:
+	```php
+	$url = "https://h5bp.com";
+	```
 
 ### Running the Application
 
 1. Open your browser and navigate to the script by visiting:
-   ```bash
-   http://localhost/website-pinger/website-pinger.php
-   ```
+	```bash
+	http://localhost/website-pinger/website-pinger.php
+	```
 
-   You should see a table with the list of websites and their respective HTTP status codes, which will automatically refresh every 10 seconds.
+	You should see a table with the list of websites and their respective HTTP status codes, which will automatically refresh every 10 seconds.
 
 
 ### File Descriptions
